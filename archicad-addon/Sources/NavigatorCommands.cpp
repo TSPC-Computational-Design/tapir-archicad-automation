@@ -128,6 +128,7 @@ GS::ObjectState UpdateDrawingsCommand::Execute(const GS::ObjectState& parameters
         ? CreateSuccessfulExecutionResult()
         : CreateFailedExecutionResult(err, "Failed to update drawings.");
 #else
-    return CreateFailedExecutionResult(APIERR_NOTSUPPORTED, "DrawingUpdateCommand is not supported in Archicad versions earlier than 27.")
+    (void) parameters;
+    return CreateFailedExecutionResult (APIERR_NOTSUPPORTED, "DrawingUpdateCommand is not supported in Archicad versions earlier than 27.");
 #endif
 }
